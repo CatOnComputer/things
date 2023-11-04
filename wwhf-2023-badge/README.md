@@ -11,6 +11,7 @@ Note that this isn't a sponsored or endorsed writeup of the badge, and this is j
 - x2 User Configurable Buttons
 - x1 ESP32-S3 WiFi & Bluetooth [SoC](https://www.howtogeek.com/769198/what-is-a-system-on-a-chip-soc/)
 - x1 RFID Reader RFID-RC522 With a [SPI](https://www.analog.com/en/analog-dialogue/articles/introduction-to-spi-interface.html) [connection](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/spi.html) to the ESP32-S3
+- x1337 Cool Designs + Flashy
 
 *TODO: Map the input pins and identify the SPI bus used on the ESP32 with the Reader*
 
