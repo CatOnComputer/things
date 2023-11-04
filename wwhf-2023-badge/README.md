@@ -50,16 +50,20 @@ There are a few ways to program the ESP32. The two main ways I am familiar with 
 If you are more familiar with using the command line, compiling projects with your own editor/IDEs, and you're comfortable learning a lot about the ESP32 SoC internals in detail (reading a lot of datasheets and docs!), you might consider using the [Espressif tools](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/get-started/index.html#introduction) , namely `esp-idf`, used as command `idf.py` once installed. This collection of tools will give you more control over your device, with (*allegedly*) less "bloat" to your code. It also contains an "examples" directory for sample code projects you can simply copy and build / upload all with `idf.py`. 
 
 With esp-idf tools installed, you can open the configured console and run commands for various tasks:
-- `cd` to a valid project folder, and run `idf.py build` to build it, or `idf.py flash` to flash to the ESP32
-- Dump a backup copy of the raw data from the ESP32 flash storage
+- `cd` to a valid project folder, and run commands:
+  - `idf.py menuconfig` to configure the project
+  - `idf.py build` to build project
+  - `idf.py flash` to build and flash the project to the ESP32
+  - `idf.py monitor` to make a serial connection to the ESP32
 
-  `esptool.py --port COM4 --baud 115200 read_flash 0 ALL flash_contents.img`
-- Restore a raw dump backup to the ESP32 flash:
+- Dump a backup copy of the raw data from the ESP32 flash storage:
+  - `esptool.py --port COM4 --baud 115200 read_flash 0 ALL flash_contents.img`
 
-  `python esptool.py --port COM4 write_flash -fm qio 0 flash_contents.img`
-- Read information on the dumped data:
+- Restore a raw dump back to the ESP32:
+  - `esptool.py --port COM4 --baud 115200 write_flash -fm qio 0 flash_contents.img`
 
-  `esptool.py image_info --version 2 flash_contents.img`
+- Read information on dumped raw data:
+  - `esptool.py image_info --version 2 flash_contents.img`
 
 While there are possibly some performance benefits and lots to learn and do using these tools, sometimes the learning curve can be a bit high, and so it is not necessarily recommended.
 
@@ -70,7 +74,7 @@ Before trying to program anything, you need a place to write your code, and a to
 
 The Arduino IDE has been around for a long time, and is an easy choice for programming [supported Arduino devices](https://en.wikipedia.org/wiki/List_of_Arduino_boards_and_compatible_systems) *(or devices designed like them, such as the badge)*. The software features an editor, and a behind-the-scenes suite of tools and libraries integrated into it for editing, validating, compiling and uploading your code to a specified device, and even communicating with the device over a serial port connection. 
 
-It comes with the [Arduino libraries or API](https://www.arduino.cc/reference/en/), which abstract away the complicated details of supported hardware and their "underlying" libraries that might be unique to each one. The libraries make it easier to just *do* things you want to do in code in a more repeatable and easily understandable way, without getting too bogged down in the technicalities of the specific Microcontroller or SoC you're programming (lots of [tutorials](https://www.arduino.cc/en/Tutorial/HomePage), with [forums](https://forum.arduino.cc/) and generally much easier to learn).
+It comes with the [Arduino libraries or API](https://www.arduino.cc/reference/en/), which abstract away the complicated details of supported hardware and their underlying libraries which might be unique to each one. The libraries make it easier to just *do* things you want to do in code in a more repeatable and easily understandable way, without getting too bogged down in the technicalities of the specific Microcontroller or SoC you're programming (lots of [tutorials](https://www.arduino.cc/en/Tutorial/HomePage), with [forums](https://forum.arduino.cc/) and generally much easier to learn).
 
 To make a comparison, we could look at something as simple as turning an LED on for one second and then off for one second (on > pause > off > pause).
 
