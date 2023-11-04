@@ -170,7 +170,7 @@ The Arduino IDE has three buttons to the top right, which are the \[Verify\],  \
 - When the code compiles properly without errors, you can Upload it to the badge with the \[Upload\] button. 
 - The third button is for debugging the code on your device (this works with some supported Arduino boards).
 ## ⌚ Programming Quick Steps: With SimpleHello.ino 🧾
-The code below can be copied or [saved](files/SimpleHello.ino) to a file named `SimpleHello.ino`:
+The code below can be copied or [saved](https://raw.githubusercontent.com/CatOnComputer/things/main/wwhf-2023-badge/files/SimpleHello.ino) to a file named `SimpleHello.ino`:
 ```C++
 /********************************************
  * github @CatOnComputer                    *
@@ -250,7 +250,7 @@ digitalWrite(47, LOW);
 ```
 
 ## ⌚ Programming Quick Steps: With SimpleLeds.ino 🧾
-Below is code you can [save](files/SimpleLeds.ino) into a file named `SimpleLeds.ino`, to open with Arduino IDE:
+Below is code you can [save](https://raw.githubusercontent.com/CatOnComputer/things/main/wwhf-2023-badge/files/SimpleLeds.ino) into a file named `SimpleLeds.ino`, to open with Arduino IDE:
 ```C++
 /********************************************
  * github @CatOnComputer                    *
