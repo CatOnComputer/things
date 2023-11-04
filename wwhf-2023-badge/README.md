@@ -16,7 +16,7 @@ The badge itself could be used to scan different locations throughout the event 
 ### Hardware
 - WWHF 2023 Badge you want to program
 - USB A to Micro-B Sync/Data Cable, *one of these:*
-![[usb-b.png]]
+![[files/usb-micro-b.png]]
 ### Software
 - [Arduino IDE](https://www.arduino.cc/en/software) or [Espressif IDE / Tools](https://dl.espressif.com/dl/esp-idf/)
 ### Things to Know
@@ -146,7 +146,7 @@ The Arduino IDE has three buttons to the top right, which are the \[Verify\],  \
 - When the code compiles properly without errors, you can Upload it to the badge with the \[Upload\] button. 
 - The third button is for debugging the code on your device (this works with some supported Arduino boards).
 ## ⌚ Programming Quick Steps: With SimpleHello.ino 🧾
-The code below can be copied or [saved](SimpleHello.ino) to a file named `SimpleHello.ino`:
+The code below can be copied or [saved](files/SimpleHello.ino) to a file named `SimpleHello.ino`:
 ```C++
 /********************************************
  * github @CatOnComputer                    *
@@ -195,7 +195,7 @@ At this point, you can use a serial monitor to connect to the Arduino (knowing t
 To program the LEDs, you must first know which [GPIO](https://deepbluembedded.com/arduino-digitalwrite-digital-output-gpio-tutorial/) pin numbers they're assigned to on your badge. The goal is to correlate the pin number entered in your code trying to control them with the physical pin it's wired to. This way, using the function `digitalWrite(PIN_NUMBER, HIGH);` in code will physically set that pin to "HIGH", turning the LED on. Calling `digitalWrite(PIN_NUMBER, LOW);` would turn it off again (setting it "LOW").
 
 I went through uploading test code, and mapped these pins to their LEDs. In the picture below their GPIO assignments are shown going in *counter-clockwise* order (top-left, down and around in a circle, and finally the center "eye" LEDs):
-![[ledsmap-badge.png]]
+![[files/ledsmap-badge.png]]
 
 | GPIO Number | Location   | Color |
 |-------------|------------|-------|
@@ -225,7 +225,7 @@ digitalWrite(47, LOW);
 ```
 
 ## ⌚ Programming Quick Steps: With SimpleLeds.ino 🧾
-Below is code you can [save](SimpleLeds.ino) into a file named `SimpleLeds.ino`, to open with Arduino IDE:
+Below is code you can [save](files/SimpleLeds.ino) into a file named `SimpleLeds.ino`, to open with Arduino IDE:
 ```C++
 /********************************************
  * github @CatOnComputer                    *
