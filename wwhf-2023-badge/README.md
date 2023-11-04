@@ -7,13 +7,13 @@ Note that this isn't a sponsored or endorsed writeup of the badge, and this is j
 
 <h1> Badge Features </h1>
 
-- x14 Controllable LEDs (11 individual + 3 for RGB, the "eyes"*)
+- x14 Controllable LEDs (11 individual + 3 for RGB, the "eyes")
 - x2 User Configurable Buttons
 - x1 ESP32-S3 WiFi & Bluetooth [SoC](https://www.howtogeek.com/769198/what-is-a-system-on-a-chip-soc/)
 - x1 RFID Reader RFID-RC522 With a [SPI](https://www.analog.com/en/analog-dialogue/articles/introduction-to-spi-interface.html) [connection](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/spi.html) to the ESP32-S3
 - x1337 Cool Designs + Flashy
 
-*TODO: Map the input pins and identify the SPI bus used on the ESP32 with the Reader*
+*TODO: Map the input pins and identify the bus (and [if it's SPI, I2C or UART](https://microcontrollerslab.com/rc522-rfid-reader-pinout-arduino-interfacing-examples-features/)) used on the ESP32 with the Reader*
 
 ## What's Needed
 ### Hardware
@@ -47,7 +47,21 @@ If you prefer to dive in with programming the Arduino, go to "Installation: Quic
 
 There are a few ways to program the ESP32. The two main ways I am familiar with are directly (using the original Espressif tools), or by using the Arduino IDE.
 
-If you are more familiar with using the command line, compiling projects with your own editor/IDEs, and you're comfortable learning a lot about the ESP32 SoC internals in detail (reading a lot of datasheets and docs!), you might consider using the [Espressif tools](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/get-started/index.html#introduction) , namely `esp-idf`, used as command `idf.py` once installed. This collection of tools will give you more control over your device, with (*allegedly*) less "bloat" to your code. It also contains an "examples" directory for sample code projects you can simply copy and build / upload all with `idf.py`. While there are possibly some performance benefits and lots to learn using these tools, sometimes the learning curve can be a bit high, and so it is not necessarily recommended.
+If you are more familiar with using the command line, compiling projects with your own editor/IDEs, and you're comfortable learning a lot about the ESP32 SoC internals in detail (reading a lot of datasheets and docs!), you might consider using the [Espressif tools](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/get-started/index.html#introduction) , namely `esp-idf`, used as command `idf.py` once installed. This collection of tools will give you more control over your device, with (*allegedly*) less "bloat" to your code. It also contains an "examples" directory for sample code projects you can simply copy and build / upload all with `idf.py`. 
+
+With esp-idf tools installed, you can open the configured console and run commands for various tasks:
+- `cd` to a valid project folder, and run `idf.py build` to build it, or `idf.py flash` to flash to the ESP32
+- Dump a backup copy of the raw data from the ESP32 flash storage
+
+  `esptool.py --port COM4 --baud 115200 read_flash 0 ALL flash_contents.img`
+- Restore a raw dump backup to the ESP32 flash:
+
+  `python esptool.py --port COM4 write_flash -fm qio 0 flash_contents.img`
+- Read information on the dumped data:
+
+  `esptool.py image_info --version 2 flash_contents.img`
+
+While there are possibly some performance benefits and lots to learn and do using these tools, sometimes the learning curve can be a bit high, and so it is not necessarily recommended.
 
 For those just starting off, [Arduino IDE](https://www.arduino.cc/en/software) is a better and more approachable option, and is the process I'll cover below. 
 ### Thoughts on Arduino IDE
