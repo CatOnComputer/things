@@ -172,6 +172,7 @@ The Arduino IDE has three buttons to the top right, which are the \[Verify\],  \
 ## ⌚ Programming Quick Steps: With SimpleHello.ino 🧾
 The code below can be copied or [saved](https://raw.githubusercontent.com/CatOnComputer/things/main/wwhf-2023-badge/files/SimpleHello.ino) to a file named `SimpleHello.ino`:
 ```C++
+
 /********************************************
  * github @CatOnComputer                    *
  * Simple serial "Hello World" for an esp32 *
@@ -183,28 +184,29 @@ int n_messageLoops = 0;
 // setup() only runs once, after powering the device
 void setup() {
 
-  // init the serial connection (115200 baud rate)
-    Serial.begin(115200);
+  // init the serial connection (115200 baud rate)
+  Serial.begin(115200);
 
-  // do nothing until a serial connection is made...
-    while (!Serial) {;}
+  // do nothing until a serial connection is made...
+  while (!Serial) {;}
 
-  // send a message upon successful connection
-    Serial.println("Serial Connection Started!");
+  // send a message upon successful connection
+  Serial.println("Serial Connection Started!");
 }
 
 // loop() will run continuously, in a loop
 void loop() {
 
-  // Print the message, and the number of times it looped
-    Serial.println("Hello World! Message #" + String(n_messageLoops));
-  
-  // wait about one second
-    delay(1000);
+  // Print the message, and the number of times it looped
+  Serial.println("Hello World! Message #" + String(n_messageLoops));
+ 
+  // wait about one second
+  delay(1000);
 
   // increment the counter (increase +1)
-    n_messageLoops++;
+  n_messageLoops++;
 }
+
 ```
 
 Assuming you've properly installed and configured things for Arduino IDE, and the board is switched to USB mode, plugged in and ready to be programmed *(you have configured the board as "ESP32S3 Dev Module", and you set the PORT and the baud rate or "Upload Speed")*, do the following:
@@ -252,6 +254,7 @@ digitalWrite(47, LOW);
 ## ⌚ Programming Quick Steps: With SimpleLeds.ino 🧾
 Below is code you can [save](https://raw.githubusercontent.com/CatOnComputer/things/main/wwhf-2023-badge/files/SimpleLeds.ino) into a file named `SimpleLeds.ino`, to open with Arduino IDE:
 ```C++
+
 /********************************************
  * github @CatOnComputer                    *
  * Simple led flasing for WWHF 2023 badge   *
@@ -277,51 +280,52 @@ Below is code you can [save](https://raw.githubusercontent.com/CatOnComputer/thi
 #define TOTAL_LEDS 14
 
 // store those pins we'll use in an array called "pinList" for easy access later
-const int pinList[TOTAL_PINS] = {
-  LED_01, LED_02, LED_03, LED_04, LED_05, LED_06, LED_07,
-  LED_08, LED_09, LED_10, LED_11, LED_R, LED_G, LED_B
+const int pinList[TOTAL_LEDS] = {
+  LED_01, LED_02, LED_03, LED_04, LED_05, LED_06, LED_07,
+  LED_08, LED_09, LED_10, LED_11, LED_R, LED_G, LED_B
 };
 
 // a helper function to turn all the leds off
 void allOff() {
   // iterate through the pinList to sequentially turn them off
-  for(int listIndex = 0; listIndex < TOTAL_LEDS-1; listIndex++) {
-    digitalWrite(pinList[listIndex], LOW);
-  }
+  for(int listIndex = 0; listIndex < TOTAL_LEDS; listIndex++) {
+    digitalWrite(pinList[listIndex], LOW);
+  }
 }
 
 // a helper function to turn all the leds on
 void allOn() {
   // iterate through the pinList to sequentially turn them off
-  for(int listIndex = 0; listIndex < TOTAL_LEDS-1; listIndex++) {
-    digitalWrite(pinList[listIndex], HIGH);
-  }
+  for(int listIndex = 0; listIndex < TOTAL_LEDS; listIndex++) {
+    digitalWrite(pinList[listIndex], HIGH);
+  }
 }
 
 // a helper function to set all the leds to "output" mode
 void allOutput() {
   // iterate through the pinList to sequentially configure them
-  for(int listIndex = 0; listIndex < TOTAL_LEDS-1; listIndex++) {
-    pinMode(pinList[listIndex], OUTPUT);
-  }
+  for(int listIndex = 0; listIndex < TOTAL_LEDS; listIndex++) {
+    pinMode(pinList[listIndex], OUTPUT);
+  }
 }
 
 // setup() only runs once, after powering the device
 void setup() {
-  // configure the mode of each pin. Since they are LEDs to control, they are all OUTPUT mode
-  allOutput();
+  // configure the mode of each pin. Since they are LEDs to control, they are all OUTPUT mode
+  allOutput();
 }
 
 // loop() will run continuously, in a loop
 void loop() {
-  // Turn them all on, then wait a second (1000 ms)
-  allOn();
-  delay(1000);
+  // Turn them all on, then wait a second (1000 ms)
+  allOn();
+  delay(1000);
 
-  // Turn them all off, then wait another second
-  allOff();
-  delay(1000);
+  // Turn them all off, then wait another second
+  allOff();
+  delay(1000);
 }
+
 ```
 After saving this as a `.ino` file, the steps are very similar to the previous SimpleHello project:
 
