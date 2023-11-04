@@ -41,7 +41,7 @@ Note that this isn't a sponsored or endorsed writeup of the badge, and this is j
 ##### 📳 Includes an RFID Reader
 - One of the SPI interfaces on the badge ESP32 is attached to the green RFID Reader module RFID-RC522 on the back, which you should be able to control on one of the SPI interfaces. I haven't done this yet, but an example I found [here could be useful for that](https://esp32io.com/tutorials/esp32-rfid-nfc-relay)
 ### Before continuing
-If you prefer to dive in with programming the Arduino, go to "Installation: Quick Steps", and then see "Programming Quick Steps: With SimpleHello.ino" (links are up top). Otherwise keep reading.
+If you prefer to dive in with programming the Arduino, go to "Installation: Quick Steps", and then see "Programming Quick Steps:" for SimpleHello.ino and SimpleLeds.ino. Otherwise keep reading.
 ## 🆕 Set up the Programming Environment
 
 There are a few ways to program the ESP32. The two main ways I am familiar with are directly (using the original Espressif tools), or by using the Arduino IDE.
