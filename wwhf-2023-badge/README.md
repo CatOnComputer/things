@@ -311,4 +311,4 @@ After saving this as a `.ino` file, the steps are very similar to the previous S
 # Conclusion
 This is a really cool badge and honestly a useful tool to get started with lots of things like Microcontroller programming, or interacting with wireless protocols like Bluetooth, WiFi and RFID.
 
-I'm not sure if there is already a build and design files you can download for the badge, but I did not find those as of writing this, so my understanding of it is limited to what I observed when trying to program it.
+I'm not sure if there is already a build and design files you can get for the badge, but I did not find those as of writing this. I didn't look too hard, tbf. My understanding of it is limited to my perspective, and what I observed when trying to program it.
