@@ -3,6 +3,8 @@ A guide to programming one of the badges received at Wild-West Hackin' Fest of 2
 
 The badge itself could be used to scan different locations throughout the event site, and once all tokens were collected I think the winner would obtain a flag to submit as part of the ctf. Much appreciation goes out to those that arranged and participated in the event at Deadwood this year, it was very enjoyable and enlightening.
 
+Note that this isn't a sponsored or endorsed writeup of the badge, and this is just some advice and knowledge I thought I could share with others since I had one to mess with.
+
 <h1> Badge Features </h1>
 
 - x14 Controllable LEDs (11 individual + 3 for RGB, the "eyes"*)
@@ -16,7 +18,9 @@ The badge itself could be used to scan different locations throughout the event 
 ### Hardware
 - WWHF 2023 Badge you want to program
 - USB A to Micro-B Sync/Data Cable, *one of these:*
-![[files/usb-micro-b.png]]
+
+![usb-micro-b.png](files/usb-micro-b.png)
+
 ### Software
 - [Arduino IDE](https://www.arduino.cc/en/software) or [Espressif IDE / Tools](https://dl.espressif.com/dl/esp-idf/)
 ### Things to Know
@@ -30,7 +34,7 @@ The badge itself could be used to scan different locations throughout the event 
 ##### 🚫 Avoid Programming These Pins
 - One thing you should know is that the USB port uses two of the electrical pins on the ESP32-S3. When you program it **make sure that your code does not use GPIO19 or GPIO20 for anything**, as these are the USB Data pin connections (D+ and D-). If you reprogram the badge with code that tries to use these pins for something else, it will brick the USB connection for the badge, and you will be unable to reprogram it. While it is possible to recover from this *with a 1k-ohm resistor and careful hands...* it is not trivial, and it's best to just avoid bricking it in the first place like me.
 #### The Cool Stuff
-##### 🛜 Bluetooth & WiFi Capable
+##### 📶 Bluetooth & WiFi Capable
 - The ESP32-S3 module on this badge is capable of many things including the features documented in the official Espressif ESP32-S3 Series [datasheet here](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf). This provides a good overview of the System-on-Chip (SoC) and it's features which include WiFi and Bluetooth capabilities.
 ##### 🏴‍☠️ Hackable
 - Many of the electrical pins are capable of multiple functions, depending on how you write a program to use them. You can use certain groups of pins as a bus for data transmission (UART, I2C, or something else), or write code to manipulate individual pins however you please (GPIO).
@@ -195,7 +199,8 @@ At this point, you can use a serial monitor to connect to the Arduino (knowing t
 To program the LEDs, you must first know which [GPIO](https://deepbluembedded.com/arduino-digitalwrite-digital-output-gpio-tutorial/) pin numbers they're assigned to on your badge. The goal is to correlate the pin number entered in your code trying to control them with the physical pin it's wired to. This way, using the function `digitalWrite(PIN_NUMBER, HIGH);` in code will physically set that pin to "HIGH", turning the LED on. Calling `digitalWrite(PIN_NUMBER, LOW);` would turn it off again (setting it "LOW").
 
 I went through uploading test code, and mapped these pins to their LEDs. In the picture below their GPIO assignments are shown going in *counter-clockwise* order (top-left, down and around in a circle, and finally the center "eye" LEDs):
-![[files/ledsmap-badge.png]]
+
+![ledsmap-badge.png](files/ledsmap-badge.png)
 
 | GPIO Number | Location   | Color |
 |-------------|------------|-------|
