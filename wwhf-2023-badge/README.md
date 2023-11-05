@@ -113,7 +113,7 @@ digitalWrite(47, LOW);
 // Pause one second (1000 ms)
 delay(1000);
 ```
-Not shown is the configuration code for setting up these pins before using them, which can also be very different and more involved using the Espressif tools and libraries (like using [FreeRTOS](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/freertos.html)). You will need to have a strong understanding of the C programming language to begin navigating and utilizing Espressif tools & libraries. 
+Not shown is the configuration code for setting up these pins before using them, which can also be very different and somewhat more involved. You will need to have a strong understanding of the C programming language to begin navigating and utilizing Espressif tools & libraries. 
 
 The good news is if you don't know or aren't at a strong level of understanding with C or C++ programming languages, the book "[Programming From the Ground Up](https://www.amazon.com/Programming-Ground-Up-Jonathan-Bartlett/dp/1616100648)" by Jonathan Bartlett is a [good book to check out](https://download-mirror.savannah.gnu.org/releases/pgubook/ProgrammingGroundUp-1-0-booksize.pdf), along with [many](https://www.youtube.com/watch?v=KnvbUiSxvbM&list=PL98qAXLA6aftD9ZlnjpLhdQAOFI8xIB6e) good [learning resources](https://www.w3schools.com/c/index.php) you will probably also find around the internet.
 
