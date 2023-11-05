@@ -340,11 +340,13 @@ After saving this as a `.ino` file, the steps are very similar to the previous S
 2. Click the \[Upload\] button to have the code compiled and loaded to the board.
 
 ![SimpleLeds_test.png](files/SimpleLeds_test.png)
+
 *Screenshot of Arduino IDE after uploading SimpleLeds.ino*
 
 3. After successful programming, the board will be reset, to run the program (flashing on and off every 1-second).
 
 ![badgeflash.gif](files/badgeflash.gif)
+
 *Badge flashing after programming reset*
 
 # Conclusion
