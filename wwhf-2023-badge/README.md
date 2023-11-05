@@ -1,4 +1,7 @@
 # Programming the WWHF 2023 Badge
+
+![badgeflash.gif](files/badgeflash.gif)
+
 A guide to programming one of the badges received at Wild-West Hackin' Fest of 2023. A lot of good information on the badge for this year can be found on the official Wild-West Hackin' Fest website and Discord.
 
 The badge itself could be used to scan different locations throughout the event site, and once all tokens were collected I think the winner would obtain a flag to submit as part of the ctf. Much appreciation goes out to those that arranged and participated in the event at Deadwood this year, it was very enjoyable and enlightening.
@@ -18,7 +21,7 @@ Note that this isn't a sponsored or endorsed writeup of the badge, and this is j
 ## What's Needed
 ### Hardware
 - WWHF 2023 Badge you want to program
-- USB A to Micro-B Sync/Data Cable, *one of these:*
+- USB A to Micro-B Sync/Data Cable, *looks like one of these:*
 
 ![usb-micro-b.png](files/usb-micro-b.png)
 
@@ -215,6 +218,11 @@ Assuming you've properly installed and configured things for Arduino IDE, and th
 2. Click the \[Upload\] button to have the code compiled and loaded to the board.
 3. Immediately after successful programming, the board will be reset, to run the program.
 At this point, you can use a serial monitor to connect to the Arduino (knowing the port and baud rate), to view the programmed messages the board is sending!
+
+
+![SimpleHello_test.png](files/SimpleHello_test.png)
+*Screenshot of Arduino IDE receiving messages after uploading SimpleHello.ino*
+
 ## How to control the LEDs
 
 ### How the LEDs map to the ESP32-S3 GPIO
@@ -332,6 +340,10 @@ After saving this as a `.ino` file, the steps are very similar to the previous S
 1. Open `SimpleLeds.ino` with the Arduino IDE. Double click the `SimpleLeds.ino` file to auto-launch the Arduino project, or you can go to **File** > **Open...** in the IDE and select the file manually.
 2. Click the \[Upload\] button to have the code compiled and loaded to the board.
 3. After successful programming, the board will be reset, to run the program (flashing on and off every 1-second).
+
+![SimpleLeds_test.png](files/SimpleLeds_test.png)
+*Screenshot of Arduino IDE receiving messages after uploading SimpleLeds.ino*
+
 # Conclusion
 This is a really cool badge and honestly a useful tool to get started with lots of things like Microcontroller programming, or interacting with wireless protocols like Bluetooth, WiFi and RFID.
 
