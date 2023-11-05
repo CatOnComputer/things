@@ -219,7 +219,6 @@ Assuming you've properly installed and configured things for Arduino IDE, and th
 3. Immediately after successful programming, the board will be reset, to run the program.
 At this point, you can use a serial monitor to connect to the Arduino (knowing the port and baud rate), to view the programmed messages the board is sending!
 
-
 ![SimpleHello_test.png](files/SimpleHello_test.png)
 *Screenshot of Arduino IDE receiving messages after uploading SimpleHello.ino*
 
@@ -339,10 +338,14 @@ After saving this as a `.ino` file, the steps are very similar to the previous S
 
 1. Open `SimpleLeds.ino` with the Arduino IDE. Double click the `SimpleLeds.ino` file to auto-launch the Arduino project, or you can go to **File** > **Open...** in the IDE and select the file manually.
 2. Click the \[Upload\] button to have the code compiled and loaded to the board.
-3. After successful programming, the board will be reset, to run the program (flashing on and off every 1-second).
 
 ![SimpleLeds_test.png](files/SimpleLeds_test.png)
-*Screenshot of Arduino IDE receiving messages after uploading SimpleLeds.ino*
+*Screenshot of Arduino IDE after uploading SimpleLeds.ino*
+
+3. After successful programming, the board will be reset, to run the program (flashing on and off every 1-second).
+
+![badgeflash.gif](files/badgeflash.gif)
+*Badge flashing after programming reset*
 
 # Conclusion
 This is a really cool badge and honestly a useful tool to get started with lots of things like Microcontroller programming, or interacting with wireless protocols like Bluetooth, WiFi and RFID.
