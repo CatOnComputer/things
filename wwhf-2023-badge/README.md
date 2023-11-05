@@ -138,11 +138,12 @@ Process for setting up the software I need:
 Steps to configure a project for the badge:
 1. Click on **Select Board** after installing the esp32 packages
 2. search or choose **ESP32S3 Dev Module** from the list, and then OK
-3. Set the upload speed to match the badge's baud rate of `115200` by clicking **Tools** > **Upload Speed: xxxxx** and changing it to **115200**
-4. The ESP32-S3 on the badge is a version with 8MB of flash. Select that in the IDE by clicking **Tools** > **Flash Size: xxxxxxx** and changing it to **8MB (64Mb)**
-5. At this point, you can switch the badge into "USB" power mode, and plug it in
-6. Identify the Windows "COMx" or linux "ttyUSBx" port; [helpful info on that here](https://support.arduino.cc/hc/en-us/articles/4406856349970-Select-board-and-port-in-Arduino-IDE)
-7. Select the port for your plugged in badge by going to **Tools** > **Port** and clicking the one you identified previously
+3. Set the upload speed to match the badge's baud rate of `115200` by clicking **Tools** > **Upload Speed: ________** and changing it to **115200**
+4. The ESP32-S3 on the badge is a version with 8MB of flash. Select that in the IDE by clicking **Tools** > **Flash Size: ________** and changing it to **8MB (64Mb)**
+5. Go to **Tools** > **USB CDC on Boot: ________** and change it to **Enabled**. If this is disabled, code that uses the Serial port to send messages (like the first example) won't work.
+6. At this point, you can switch the badge into "USB" power mode, and plug it in
+7. Identify the Windows "COMx" or linux "ttyUSBx" port; [helpful info on that here](https://support.arduino.cc/hc/en-us/articles/4406856349970-Select-board-and-port-in-Arduino-IDE)
+8. Select the port for your plugged in badge by going to **Tools** > **Port** and clicking the one you identified previously
 ### How Does Programming Work?
 
 ### Long Explanation
