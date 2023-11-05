@@ -32,9 +32,12 @@ Note that this isn't a sponsored or endorsed writeup of the badge, and this is j
 ##### 🔋 The Battery
 - The Badge comes with a Lithium battery you attach to the backside, and then plug-in to the badge through a hole. It's important to note at this point that this is an exposed Lithium battery. Lithium batteries can violently burst into flames if they are over-stressed (bent), punctured or over-charged. And when it happens they smell truly awful, and the fumes probably cause cancer or something, certainly not any good things come from it. It's good to observe Lithium battery etiquette, and avoid disturbing them in their natural habitat.
 ##### 🎚️ The USB / Battery Power Selector
-- On the side of the badge there are two switches. One controls the power rails for the badge, selecting either USB power or battery power. It it is best practice to make sure you select the correct one. 
+- On the side of the badge there are two switches. One controls the power rails for the badge, selecting either USB power or battery power ("BAT" or "VBUS"). It it is best practice to make sure you select the correct one:
+
+![switches.jpg](files/switches.jpg)
+
 - If you are programming the badge and powering it via USB, make sure to select this on the switch.
-- If you are wearing or displaying the badge and want to use the battery, then flip the switch for that purpose, making sure to switch it back if you'll plug it in over USB. Forgetting to select the proper rail on the switch might cause it not to function as expected, or might even be a little dangerous at worst so it's best to pay close attention to what's selected when using it. The other switch is simply a power on/off switch.
+- If you are wearing or displaying the badge and want to use the battery, then flip the switch to BAT for that purpose, making sure to switch it back to VBUS if you'll plug it in over USB. Forgetting to select the proper rail on the switch might cause it not to function as expected, or might even be a little dangerous. It's best to pay close attention to what's selected when using it. The other switch is simply a power on/off switch.
 ##### 🚫 Avoid Programming These Pins
 - One thing you should know is that the USB port uses two of the electrical pins on the ESP32-S3. When you program it **make sure that your code does not use GPIO19 or GPIO20 for anything**, as these are the USB Data pin connections (D+ and D-). If you reprogram the badge with code that tries to use these pins for something else, it will brick the USB connection for the badge, and you will be unable to reprogram it. While it is possible to recover from this *with a 1k-ohm resistor and careful hands...* it is not trivial, and it's best to just avoid bricking it in the first place like me.
 #### The Cool Stuff
@@ -167,7 +170,9 @@ If you want to know more about Serial connections, you might read about [UART](h
 ### How to Load Example Code on The Badge
 After setting up the software environment, and configuring the project (see "Installation: Quick Steps") you can try loading the program.
 
-The Arduino IDE has three buttons to the top right, which are the \[Verify\],  \[Upload\] and \[Debug\] buttons.
+The Arduino IDE has three buttons to the top right, which are the \[Verify\],  \[Upload\] and \[Debug\] buttons (left-to-right):
+
+![verify_upload_debug.png](files/verify_upload_debug.png)
 
 - You can run \[Verify\] to check that your code passes syntax checks, and compiles successfully without errors or warnings.
 - When the code compiles properly without errors, you can Upload it to the badge with the \[Upload\] button. 
